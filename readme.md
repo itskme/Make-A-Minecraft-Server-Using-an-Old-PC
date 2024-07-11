@@ -48,7 +48,7 @@
 
 7. Select your language and keyboard layout.
 
-8. Under **"network connections"** write down the **DHCPv4** ip address **of your wired networking.** **Save this for later.**
+8. Under **"network connections"** write down the **DHCPv4** ip address **of your networking.** **Save this for later.**
 
 9. Continue the setup, skip "proxy address" and "mirror address."
 
@@ -68,9 +68,9 @@
     
     * password **(make it secure)**
 
-14* confirm -> confirm
+14. confirm -> confirm
 
-15* Select to:
+15. Select to:
     
     * install OpenSSH server
     
@@ -80,26 +80,56 @@
     
     
 
-16* confirm
+16. confirm.
 
-17* Wait for the setup to complete.
+17. Wait for the setup to complete.
 
-18* Remove your flash drive **when prompted.**
+18. Remove your flash drive **when prompted.**
 
-19* wait for your server to reboot
+19. wait for your server to reboot
 
 ## Configure SSH for Remote Access
 
-1. Install OpenSSH on your main computer (not the one we just configured) by following [this]([Get started with OpenSSH for Windows | Microsoft Learn](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)) guide from Microsoft.
+1. Install OpenSSH on your main computer (not the one we just configured) by following [this](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui) guide from Microsoft.
 
 2. Open PowerShell as administrator.
 
-3. plug your server into your PC via direct ethernet or your home network.
+3. plug your server into your PC via direct ethernet or ensure it is accessible through your home network. **Make sure it has access to the internet for later.**
 
 4. type "ssh YOUR_SERVER_USERNAME@YOUR_DHCPv4_IP"
 
-5. 
+## Using SSH to Configure the Server
 
+1. type "sudo apt-get update" 
+   
+   -> type your password
 
+2. type "sudo apt-get **upgrade**"
+   
+   -> type your password
+
+3. type "clear"
+
+4. type "sudo groupadd docker"
+
+5. type "sudo gpasswd -a YOUR_SERVER_USERNAME docker"
+
+6. restart your server with "sudo reboot"
+
+7. type "docker ps"
+   
+   * we will be using docker to run the minecraft server
+
+8. type "mkdir mc-docker"
+
+9. type "ls" to confirm the folder was made in your home directory, you should see "mc-docker" in purple.
+
+10. copy the contents of "docker-config.txt" in this repo into your SSH terminal. -> press enter.
+    
+Once the image is downloaded, open your minecraft app and add your server using your ip address and server name from before.
+
+## Enjoy!
+
+You have just created a minecraft server! It is currently only accessible from within your intranet, but if you want a more permanent solution accessible from anywhere, look into free services like [ngrok]((https://ngrok.com/download). 
 
 
