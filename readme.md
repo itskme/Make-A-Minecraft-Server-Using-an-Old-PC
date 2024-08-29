@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/e89b9d21-a38c-4c7b-ae70-38748eecba9e)
+![image](https://github.com/user-attachments/assets/b445bee7-1fef-4fb7-956c-b6c24f962f0a)
+
 
 
 # How to Create a Minecraft Server out of an Old Windows PC with Linux
